@@ -154,8 +154,15 @@
         ></textarea>
 
         <div class="flex flex-row">
-          <button class="bg-cyan-700 rounded-sm p-1 mx-2">Encrypt</button>
-          <button class="bg-cyan-700 rounded-sm p-1 px-3 mx-2">Clear</button>
+          <button id="encrypt-button" class="bg-cyan-700 rounded-sm p-1 mx-2">
+            Encrypt
+          </button>
+          <button
+            id="message-clear-button"
+            class="clear-button bg-cyan-700 rounded-sm p-1 px-3 mx-2"
+          >
+            Clear
+          </button>
         </div>
       </section>
       <section id="" class="h-1/2 flex flex-col justify-center items-center">
@@ -345,14 +352,19 @@
 
         <textarea
           name=""
-          id="message-ecrypted"
+          id="message-encrypted"
           class="rounded-md m-2"
           cols="40"
           rows="6"
           placeholder="Here will be the text encrypted"
         ></textarea>
         <div class="flex flex-row">
-          <button class="bg-cyan-700 rounded-sm p-1 px-3 mx-2">Clear</button>
+          <button
+            id="encrypt-clear-button"
+            class="bg-cyan-700 rounded-sm p-1 px-3 mx-2"
+          >
+            Clear
+          </button>
         </div>
       </section>
     </main>
