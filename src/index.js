@@ -2,11 +2,12 @@ const messageInput = document.querySelector("#message-input");
 const encryptedInput = document.querySelector("#message-encrypted");
 
 const encryptButton = document.querySelector("#encrypt-button");
+const decryptButton = document.querySelector("#decrypt-button");
 const messageClearButton = document.querySelector("#message-clear-button");
 const encryptedClearButton = document.querySelector("#encrypt-clear-button");
 
 const encrypt = (message) => (e) => {
-  const splitMessage = message.value.split("");
+  const splitMessage = message.value.toLowerCase().split("");
   const encryptedArray = [];
 
   for (let i = 0; i < splitMessage.length; i++) {
@@ -32,13 +33,30 @@ const encrypt = (message) => (e) => {
     encryptedArray.push(element);
   }
   const encryptedMessage = encryptedArray.join().replace(/,/g, "");
-  encryptedInput.textContent = encryptedMessage;
+  encryptedInput.value = encryptedMessage;
 };
 
-const clear = (field) => (e) => {
-  field.textContent = "";
+const decrypt = (message) => (e) => {
+  const splitMessage = message.value
+    .toLowerCase()
+    .replace(/ai/g, "a")
+    .replace(/enter/g, "e")
+    .replace(/imes/g, "i")
+    .replace(/ober/g, "o")
+    .replace(/ufat/g, "u");
+
+  messageInput.value = splitMessage;
 };
+
+const clearButton = (field) => (e) => {
+  field.value = "";
+};
+
+function clear(field) {
+  field.value = "";
+}
 
 encryptButton.addEventListener("click", encrypt(messageInput));
-messageClearButton.addEventListener("click", clear(messageInput));
-encryptedClearButton.addEventListener("click", clear(encryptedInput));
+decryptButton.addEventListener("click", decrypt(encryptedInput));
+messageClearButton.addEventListener("click", clearButton(messageInput));
+encryptedClearButton.addEventListener("click", clearButton(encryptedInput));
