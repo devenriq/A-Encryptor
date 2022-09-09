@@ -2,8 +2,8 @@
   "devDependencies": {
     "tailwindcss": "^3.1.8"
   },
-  "name": "1.encriptador",
-  "description": "��#\u0000 \u0000A\u0000-\u0000E\u0000n\u0000c\u0000r\u0000y\u0000p\u0000t\u0000o\u0000r\u0000\r\u0000 \u0000",
+  "name": "encriptador",
+  "description": "Simple project to encrypt words",
   "version": "1.0.0",
   "main": "tailwind.config.js",
   "dependencies": {
@@ -67,7 +67,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "tw:build": "npx tailwindcss -i ./src/style.css -o ./dist/style.css --watch"
+    "tw:build": "npx tailwindcss -i ./src/style.css -o ./dist/output.css --watch"
   },
   "repository": {
     "type": "git",
